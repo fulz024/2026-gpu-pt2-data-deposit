@@ -1,0 +1,158 @@
+{
+  "units": {
+    "energy": "hartree",
+    "time": "second",
+    "memory": "GiB",
+    "gap": "E(quintet)-E(triplet)"
+  },
+  "performance": {
+    "Nref": 2000000,
+    "U": 262144,
+    "K": 65536,
+    "external_partitions": 16,
+    "control_buckets_per_sign": 2147483648,
+    "sampled_buckets_per_sign": 268435456,
+    "coarse_to_fine_threshold_ratio": 10,
+    "target_SE_Ha": 1e-05,
+    "minimum_sampled_iterations": 6,
+    "maximum_control_evaluations": 16,
+    "observed_control_evaluations_per_system": 1,
+    "timed": "sampling setup, control, sampled correction, collectives, energy evaluation; synchronized",
+    "preparation": "input parsing, integral tables, reference indexing and upload occur before the timed region",
+    "gpu": "1 A100-SXM4-80GB with 4 physical CPU cores",
+    "arrow": {
+      "commit": "0174c4a",
+      "physical_cpu_cores": 64,
+      "program_memory_GB": 800,
+      "pt2_memory_fraction": 0.4,
+      "stopping": "native three-stage estimator"
+    },
+    "trimci": {
+      "commit": "0deaee9",
+      "width": 262144,
+      "depth": 5,
+      "norm_target": 0.99,
+      "stochastic_fraction": 0.02,
+      "bloom": 0.001,
+      "intruder_threshold_Ha": 1e-06,
+      "reported_observables": [
+        "PT2 time"
+      ],
+      "benzene_four_run_SD_microHa": 399.18
+    }
+  },
+  "scaling": {
+    "system": "N2/cc-pVDZ, CDFCI Hamiltonian, bond length 2.118 bohr",
+    "sketches": 8,
+    "buckets_per_sketch": 65536,
+    "source_batch": 512,
+    "matrix_element_cutoff_Ha": 1e-08,
+    "denominator_floor_Ha": 1e-08,
+    "repeats": 5,
+    "warmup_calls": 2,
+    "timed": "H_SS*c, projected internal and external corrections, including collectives",
+    "rank_summary": "maximum across ranks",
+    "repeat_summary": "median, minimum, maximum",
+    "memory": "peak allocated tensor memory per GPU"
+  },
+  "science": {
+    "feo": {
+      "electrons": 60,
+      "spatial_orbitals": 187,
+      "basis": "Fe/O: cc-pVTZ; N: cc-pVDZ; H: 6-31G"
+    },
+    "fep": {
+      "electrons": 40,
+      "spatial_orbitals": 42,
+      "basis": "cc-pVDZ"
+    },
+    "orbital_optimization_energy_change_Ha": 1e-08,
+    "orbital_optimization_gradient_norm": 1e-05,
+    "observed_orbital_stop": "effective accepted-step energy-change criterion",
+    "CI_residual_tolerance_Ha": 1e-07,
+    "orbitals": "state-specific optimization at 1M; fixed at larger supports",
+    "target_SE_Ha": {
+      "1M_and_3M": 5e-05,
+      "larger_supports": 2.5e-05
+    },
+    "extrapolation": "unweighted least squares of E_SCI+PT2 versus abs(E2), all sizes per state",
+    "fixed_30M_fep_checks": {
+      "CI_tolerance_Ha": 1e-08,
+      "triplet_residual_Ha": 7.16e-09,
+      "quintet_residual_Ha": 7.98e-09,
+      "variational_gap_change_Ha": 1.08e-10,
+      "PT2_gap_mHa": 4.08851,
+      "PT2_gap_at_half_threshold_mHa": 4.06535
+    }
+  },
+  "nnqs": {
+    "transformer_blocks": 4,
+    "width": 32,
+    "attention_heads": 4,
+    "dropout": 0,
+    "phase_hidden_layers": 4,
+    "phase_width": 512,
+    "initialization": "CISD supervised",
+    "parameter_updates": 30000,
+    "stopping": "fixed count of 30000 parameter updates",
+    "sampling": "fresh BAS support per update",
+    "nominal_support_size": 30000,
+    "optimizer": "AdamW",
+    "betas": [
+      0.9,
+      0.99
+    ],
+    "epsilon": 1e-09,
+    "weight_decay": 0,
+    "learning_rate": {
+      "schedule": "capped Transformer",
+      "warmup_steps": 4000,
+      "scale": 1,
+      "maximum": 0.0001
+    },
+    "evaluation_seed": 334,
+    "matrix_element_cutoff_Ha": 1e-08,
+    "denominator_floor_Ha": 1e-08,
+    "external": "deterministic screened sum",
+    "coefficients": "frozen network coefficients normalized on each checkpoint support",
+    "energy": "retained-support reference energy plus external, raw internal, and Olsen terms"
+  },
+  "fep_cost_memory": {
+    "system": "Fe-porphyrin, 40 electrons in 42 spatial orbitals",
+    "gpu": "1 A100-SXM4-80GB",
+    "time": "complete PT2 evaluation",
+    "memory": "allocated tensor memory, GiB = 2^30 bytes",
+    "decomposition": "array sizes; other is the measured total minus the four named components",
+    "memory_panels_state": "triplet",
+    "control_bytes_per_bucket": 32,
+    "stochastic_bytes_per_bucket": 160,
+    "bucket_counts": "per denominator-sign sector; recorded for each point in fep_cost_memory.csv"
+  },
+  "variance_validation": {
+    "system": "Fe-porphyrin triplet, 40 electrons in 42 spatial orbitals",
+    "reference_determinants": 1000000,
+    "fine_threshold_Ha": 1e-07,
+    "coarse_threshold_Ha": 1e-06,
+    "R": 1,
+    "P": 16,
+    "U": 262144,
+    "K": 65536,
+    "m": 233501,
+    "control_buckets_per_sign": 2147483648,
+    "sampled_buckets_per_sign": 268435456,
+    "complete_processes": 64,
+    "requested_SE_Ha": 5e-05,
+    "observed_control_evaluations": 1,
+    "observed_sampled_iterations": 6,
+    "collision_buckets_per_sign": [
+      65536,
+      1048576,
+      16777216,
+      268435456
+    ],
+    "independent_source_batch_draws": 8,
+    "shared_hash_maps": 16,
+    "design": "Same 16 maps crossed with all 8 draws; fine/coarse share draws, external batch and maps.",
+    "analysis": "Sample variances use n-1. Crossed source/hash moment estimates remain signed. The control contribution uses the reported conservative guard."
+  }
+}

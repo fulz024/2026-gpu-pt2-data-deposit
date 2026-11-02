@@ -1,0 +1,4 @@
+system,Nref,benchmark_energy_Ha,uncertainty_microHa,method
+h2o_ccpvdz,30861,-76.2418601,,CDFCI variational
+nh3_ccpvdz,29199,-56.40247687620448,5.78,SHCI extrapolated
+hcn_ccpvdz,29170,-93.18988417813952,7.19,SHCI extrapolated

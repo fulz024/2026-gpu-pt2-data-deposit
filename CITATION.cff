@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite this data deposit and the accompanying article."
+type: dataset
+title: "Data for: Fully GPU-accelerated semistochastic Epstein–Nesbet perturbation theory"
+version: "2026.11.03"
+url: "https://github.com/fulz024/2026-gpu-pt2-data-deposit"
+authors:
+  - family-names: Fu
+    given-names: Lizhong
+  - family-names: Shang
+    given-names: Honghui
+  - family-names: Yang
+    given-names: Jinlong
+abstract: "Numerical source data, parameters and independent scripts for Figures 3–7, Figures S1–S2, Table 1 and Tables S1–S5."

@@ -1,0 +1,8 @@
+system,method,model,gap_mHa,source,url
+feo,HCI+PT2 · largest reference,22e168o; RI integrals,-8.647000000109983,"Dang thesis, Table3.7",https://khoidang.com/pubs/docs/thesis.pdf
+feo,HCI · extrapolated,22e168o; RI integrals,-9.534999999914362,"Dang thesis, four-point extrapolation",https://khoidang.com/pubs/docs/thesis.pdf
+feo,CCSD(T) · CBS,CBS basis; outer-core correction,-0.6374405750562063,"Drabik and Radon2024, Table3; published gap=-0.4kcal/mol",https://doi.org/10.1021/acs.jctc.4c00092
+fep,ASCI+PT2 · 5M,40e42o; author orbitals,3.4579999996822153,"Levine et al., SI Table4",https://arxiv.org/html/1912.08379v2#S7
+fep,ASCI · extrapolated,40e42o; author orbitals,7.089000000178203,"Levine et al., SI Table4",https://arxiv.org/html/1912.08379v2#S7
+fep,iCISCF(2) · extrapolated,40e42o; reoptimized orbitals,6.916230239359837,"iCISCF arXiv2106.10223, Table7; printed gap4.34kcal/mol",https://arxiv.org/abs/2106.10223
+fep,FCIQMC–CASPT2,26e27o; $Q-{}^3E_g$; ANO-RCC,-3.5059231628091343,"Safari et al.2025, Table3; printed gap=-2.2kcal/mol",https://doi.org/10.1021/acs.jctc.4c01462

@@ -1,0 +1,170 @@
+{
+  "figure3": {
+    "reference_determinants": 2000000,
+    "requested_SE_microHa": 10,
+    "GPU": "1 A100-SXM4-80GB, 4 physical CPU cores",
+    "Arrow": "64 physical CPU cores, 800 GB program memory",
+    "comparison_color": "#C4A18F"
+  },
+  "figure4": {
+    "timing_repeats": 5,
+    "timing_summary": "median, minimum and maximum",
+    "memory": "peak allocated tensor memory per GPU in GiB",
+    "reference_colors": [
+      "#58798F",
+      "#C4A18F",
+      "#7E6B8E"
+    ]
+  },
+  "figure5": {
+    "energy_offsets_Ha": {
+      "feo": -1619.6,
+      "fep": -2245.22
+    },
+    "structures": {
+      "feo": {
+        "name": "[FeO(NH3)5]2+",
+        "electrons": 60,
+        "orbitals": 187
+      },
+      "fep": {
+        "name": "Fe-porphyrin",
+        "electrons": 40,
+        "orbitals": 42
+      }
+    },
+    "geometry_sources": {
+      "feo": "10.1021/acs.jctc.4c00092.s003",
+      "fep": "10.1021/acs.jctc.9b01255"
+    },
+    "layout": {
+      "feo": {
+        "y_limits_mHa": [
+          -5,
+          500
+        ],
+        "y_ticks_mHa": [
+          0,
+          100,
+          200,
+          300,
+          400,
+          500
+        ],
+        "extrapolation_inset": [
+          0.6,
+          0.56,
+          0.36,
+          0.37
+        ],
+        "molecule_inset": [
+          0.17988572727272725,
+          0.6683878504672897,
+          0.19765937549407114,
+          0.245
+        ]
+      },
+      "fep": {
+        "y_limits_mHa": [
+          4,
+          57
+        ],
+        "y_ticks_mHa": [
+          10,
+          20,
+          30,
+          40,
+          50
+        ],
+        "extrapolation_inset": [
+          0.6,
+          0.56,
+          0.36,
+          0.37
+        ],
+        "molecule_inset": [
+          0.17385753754940705,
+          0.6758878504672898,
+          0.20971575494071149,
+          0.22999999999999998
+        ]
+      }
+    }
+  },
+  "figure6": {
+    "memory_state": "triplet",
+    "memory_components": [
+      {
+        "column": "integral_GiB",
+        "label": "Integrals",
+        "color": "#B5B8BD"
+      },
+      {
+        "column": "reference_GiB",
+        "label": "Keys + coeffs.",
+        "color": "#58798F"
+      },
+      {
+        "column": "index_GiB",
+        "label": "Index",
+        "color": "#7E6B8E"
+      },
+      {
+        "column": "sampling_GiB",
+        "label": "Sampling",
+        "color": "#C4A18F"
+      },
+      {
+        "column": "other_resident_GiB",
+        "label": "Other",
+        "color": "#E1E1E1"
+      }
+    ],
+    "size_inches": [
+      6.5,
+      2.65
+    ],
+    "layout": {
+      "left": 0.08,
+      "right": 0.995,
+      "bottom": 0.22,
+      "top": 0.91,
+      "wspace": 0.27
+    },
+    "font_sizes": {
+      "ticks": 9,
+      "labels": 10,
+      "legend": 9,
+      "panel": 11
+    }
+  },
+  "figure7": {
+    "evaluation_seed": 334,
+    "symlog_linthresh_mHa": 1.6
+  },
+  "colors": {
+    "blue": "#58798F",
+    "purple": "#7E6B8E",
+    "gold": "#AB8E58"
+  },
+  "figureS1": {
+    "size_inches": [
+      7.2,
+      3.0
+    ],
+    "colors": [
+      "#647F9C",
+      "#C49B76"
+    ],
+    "complete_runs": 64,
+    "collision_B_log2": [
+      16,
+      20,
+      24,
+      28
+    ]
+  },
+  "figureS2": {
+    "description": "Exact and sketch timing comparison, five repeats; source is figure4.csv"
+  }
+}
